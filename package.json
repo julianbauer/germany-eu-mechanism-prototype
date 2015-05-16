@@ -1,7 +1,7 @@
 {
-  "name": "praxis-kley.de",
+  "name": "germany-eu-mechanism-prototype",
   "version": "0.1.0",
-  "description": "praxis-kley",
+  "description": "",
   "scripts": {
     "start:less": "lessc dev/_less/main.less > dev/css/main.css",
     "watch:less": "watch 'npm run start:less' dev/_less/",
