@@ -351,6 +351,7 @@ body {
   margin: 0;
   padding: 0;
   background: #000000;
+  counter-reset: section;
 }
 section {
   width: 100%;
@@ -404,10 +405,12 @@ section {
   -moz-box-shadow: none;
   box-shadow: none;
 }
-#votePost .baseTextarea {
+#votePost .baseTextarea,
+#ranking .baseTextarea {
   height: auto;
 }
-#voteControls {
+#voteControls,
+.voting {
   height: 50px;
   margin: 50px 30px 0;
   padding: 50px 20px 0;
@@ -416,7 +419,10 @@ section {
   background-position: 20px 50px;
   width: 300px;
 }
-#voteControls input {
+#voteControls input,
+.voting input,
+#voteControls div,
+.voting div {
   background: none;
   border: none;
   overflow: auto;
@@ -433,4 +439,40 @@ section {
   font-size: 35px;
   position: relative;
   top: -12px;
+}
+#ranking {
+  display: table;
+}
+#ranking .baseTextarea {
+  font-size: 35px;
+  margin-top: 0;
+  padding-top: 10px;
+  padding-left: 80px;
+}
+#ranking .baseTextarea:before {
+  counter-increment: section;
+  content: counter(section) ".";
+  color: #ffffff;
+  font-family: "univers", Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  position: absolute;
+  left: 30px;
+  top: 16px;
+}
+#ranking .voting {
+  margin: 20px 60px 0;
+  height: auto;
+  padding: 0 0 0;
+  background-size: auto 15px;
+  background-position: 20px 0;
+}
+#ranking .voting > div {
+  font-size: 20px;
+  top: -5px;
+}
+#ranking .rankedPost {
+  display: table-row;
+  vertical-align: middle;
+  position: relative;
+  padding-left: 50px;
 }
