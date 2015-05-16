@@ -1,0 +1,959 @@
+// Page Content
+// ------------
+// ------------
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+
+// Base Elements
+// -------------
+
+
+// Sections
+
+section {
+	padding: @sectionPadding*2 @sectionPadding 0;
+	&:after {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 2px;
+		margin-top: @sectionPadding*2;
+		background: @blue;
+	}
+
+	@media only screen and (min-width : @minWidthTablet) 
+	{
+		padding: @sectionPaddingTablet+10 @sectionPaddingTablet 0;
+	}
+
+	@media only screen and (min-width : @minWidthDesktop) 
+	{
+		padding: @sectionPaddingTablet+10 @sectionPaddingTablet+10 0;
+	}
+
+}
+
+// Small blue separator-element
+.separator {
+	&:after {
+		content: "";
+		display: block;
+		
+		background: @blue;
+		height: 6px;
+		width: 50px;
+	}
+}
+
+// Small white separator-element
+.separatorWhite {
+	&:after {
+		content: "";
+		display: block;
+		
+		background: #ffffff;
+		height: 6px;
+		width: 50px;
+	}
+}
+
+
+// Mobile-Header
+
+#header {
+	height: 50px;
+	padding: 20px 25px;
+	
+	&:after {
+		display: none;
+	}
+}
+
+#headerLogo {
+	background: @mobileLogo_2x;
+	background-size: contain;
+	width: 100%;
+	height: 45px;
+}
+
+#toNav {
+	
+	div {
+		> div
+		{
+			.positioned;
+			z-index: 101;
+			height: 3px;
+			width: 35px;
+			background: @grayC9;
+			margin: 6px 0;
+		}
+	}
+	
+//	&.closeMenu {
+//		
+//		div > div {
+//			&:first-child {
+//				display: none;
+//			}
+//			
+//			position: absolute;
+//			
+//		}
+//	}
+}
+
+
+.headerLogoMenue {
+	background: @tabletLogo_2x;
+	background-size: contain;
+	width: 100%;
+	height: 50px;
+	
+	@media only screen and (min-width : @minWidthDesktop) 
+	{
+	  	margin-top: 25px;
+	}
+}
+
+//Menue
+
+.sticky
+{
+	position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    border-top: 0;
+    height: 62px;
+	background: @grayF8 url("../images/logo_icon.png") no-repeat left center;
+
+    &:before 
+    {
+		border: 0;
+	}
+
+	p
+	{
+		width: 100%;
+  		text-align: center;
+  		font-size: 20px;
+  		margin-top: 19px;
+  		display: block;
+	}
+
+	.stickyMenuFirstDiv
+	{
+		  position: absolute;
+		  top: 14px;
+		  right: 20px;
+		  cursor: pointer;
+		
+			div {
+				.transition(background .1s linear);
+			}
+		
+			&:active {
+				div {
+					background: @blue;	
+				} 
+			}
+	}
+}
+
+.normalMenu
+{
+	position: absolute;
+	z-index: 100;
+	right: 0px;
+	top: 0px;
+	padding: 18px 25px 40px 40px;
+	overflow: hidden;	
+
+	p
+	{
+		display: none;
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		z-index: 100;
+		.square(160px);
+		.circle;
+		top: -75px;
+		left: 0px;
+		background: @grayF8;
+		
+	}
+}
+
+// Pagination
+
+.pagination {
+	.positioned;
+	margin-bottom: 30px;
+	height: 15px;
+	display: flex;
+	width: 100%;
+	align-items: flex-start;
+	
+	&:before {
+		content: "";
+		position: absolute;
+		top: 6px;
+		z-index: 1;
+		display: block;
+		background: @grayLight;
+		height: 1px;
+		width: 94%;
+		left: 3%;
+	}
+	
+	div {
+		.positioned;
+		z-index: 2;
+		flex-grow: 1;
+		text-align: center;
+
+		&:before {
+			content: "";
+			display: inline-block;
+			.square(4px);
+		}
+		
+		&.direct {
+			flex-grow: 2;
+			
+			&:before {
+				.circle;
+				background: @white;
+				border: 3px solid @grayLight;
+			}
+
+			&.active:before {
+				background: @blue;
+				border-color: @blue;
+			}
+		}
+		
+		&.prev, &.next {
+			.icn;
+			//background: @white;
+			color: @grayLight;
+			
+			&:hover, &:active {
+				color: @blue;
+			}
+			
+			&:before {
+				display: inline-block;
+				width: 100%;
+			}
+		}
+		
+		&.prev {
+			.iSmallPrev;
+			&:before { text-align: left; }
+		}
+		
+		&.next {
+			.iSmallNext;
+			&:before { text-align: right; }
+		}
+	}
+}
+
+
+
+// Article-Header
+
+header {
+	margin-bottom: 50px;
+	
+	h3 {
+		margin-top: 15px;
+	}
+	
+	&.separateAfter {
+		margin-bottom: 30px;
+		
+		.separator;
+		
+		&:after {
+			margin-top: 25px;
+		}
+	}
+
+	&.separateAfterWhite{
+		margin-bottom: 30px;
+		
+		.separatorWhite;
+		
+		&:after {
+			margin-top: 25px;
+		}
+	}
+}
+
+// Article-Content
+
+article {
+	
+// Images
+
+	img {
+		background: @grayC9;
+		margin-bottom: 20px;
+
+		&.full {
+			width: 100%;
+		}
+	}
+}
+
+
+// Image-Galleries using flexbox
+
+.previewGallery {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -7px;
+
+	.sectionNormalImage
+	{
+		width: 100%;
+	}
+
+	.sectionPanoramaImage
+	{
+		width: 100%;
+	}
+}
+
+.preview {
+	display: block;
+	.border-box;
+	padding: 0 7px 14px;
+	
+	.previewImage {
+		.positioned;
+		height: 200px;
+		background: @grayF8;
+	}
+	
+	&.small {	
+		width: 50%;
+	}
+	
+	&.big {
+		width: 100%;
+	}
+	
+	&.full {
+		width: 100%;
+	}
+
+	@media only screen and (min-width : @minWidthDesktop) 
+	{
+		&.small
+		{
+			width: 33%;
+		}	
+	}
+
+}
+
+// Start section
+// -------------
+
+#start {
+	padding-top: 30px;
+
+}
+
+// Methods section
+// ---------------
+
+#methods {
+	
+	.preview {
+		
+		.previewImage {
+			.separator;
+			
+			&:after {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+			}
+		}
+		
+		h4 {
+			margin: 10px 0 6px;
+		}
+	}
+	
+	&:after {
+		margin-top: @sectionPadding*2 - 14px; // Compensate previewImage bottompadding
+	}
+}
+
+// Team section
+// -------------
+
+.teamMemberPreview {
+	display: flex;
+	margin-bottom: 50px;
+}
+
+.teamMemberPreviewImage {
+	background: @grayF8;
+	width: 45%
+}
+
+.teamMemberPreviewText {
+	.border-box;
+	width: 55%;
+	padding-left: 15px;
+
+	header {
+		margin-bottom: 20px;
+	
+		&:after {
+			margin-top: 15px;
+		}
+	}
+
+	@media only screen and (min-width : @minWidthDesktop) 
+	{
+		padding-left: 30px;
+	}
+}
+
+// Praxis-Section
+// --------------
+
+
+#praxis {
+	&:after {
+		display: none;
+	}
+	padding-bottom: @sectionPadding - 14px;
+
+	@media only screen and (min-width : @minWidthDesktop) 
+	{
+		  padding-bottom: 80px;
+	}
+}
+
+
+
+// Footer
+// ------
+
+#footer {
+	background: @blue;
+	color: @white;
+	padding: 30px @sectionPadding;
+	 clear: both;
+	
+	h1, h2, h3, h4 {
+		color: @white;
+	}
+	
+	header:after {
+		background: @white;
+	}
+
+	@media only screen and (min-width : @minWidthTablet) 
+	{
+		padding: 30px @sectionPaddingTablet;
+	}
+	
+	.telContact {
+		h1 {
+			margin: 15px 0 35px;
+		}
+
+		@media only screen and (min-width : @minWidthTablet) 
+		{
+			flex-grow: 1;
+		}
+	}
+	
+	.footerContent
+	{
+		@media only screen and (min-width : @minWidthTablet) 
+		{
+			display: flex;
+			padding-top: 8px;
+		}
+	}
+
+	.openingHoursContainer {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -15px;
+
+		@media only screen and (min-width : @minWidthTablet) 
+		{
+			display: block;
+			flex-grow: 1;
+		}
+	}
+
+	.openingHours
+	{
+		@media only screen and (min-width : @minWidthDesktop) 
+		{
+			h2
+			{
+				font-size: 20px;
+			}
+		}
+	}
+	
+	.openingHoursBlock {
+		padding: 15px 15px 0;
+		flex-grow: 1;
+		
+		h2 {
+			.noWrap;
+			margin: 5px 0 0;
+		}
+
+		@media only screen and (min-width : @minWidthDesktop) 
+		{
+			p
+			{
+				display: inline;
+				font-size: 13px;
+			}
+
+			h2
+			{
+				line-height: 13px;
+  				margin-left: 10px;
+  				float: right;
+			}
+		}
+	}
+
+	@media only screen and (min-width : @minWidthDesktop)
+	{
+		padding: 60px 60px 20px;
+	}	
+}
+
+// Map
+// ---
+
+#map {
+	height: 400px;
+}
+
+.mapIcon {
+	.icn;
+	.iPin;
+	text-align: center;
+	
+	&:before {
+		font-size: 70px;
+		color: @blue;
+	}
+}
+
+// Adjust Mapbox-Styles
+
+.leaflet-popup-content-wrapper {
+	background: @blue;
+	border-radius: none;
+}
+
+.leaflet-popup-tip {
+	border-top-color: @blue;
+}
+
+.leaflet-popup-content {
+	padding: 10px 10px 10px;
+	font-family: @baseFontFamily;
+	color: @white;
+	font-size: @mobileH4FontSize;
+}
+
+// Mobile Responsiveness
+
+/*@media only screen and (max-width : 351px) {
+	#footer .telContact h1 { font-size: 35px; }
+}*/
+
+
+// DETAIL OVERLAYS
+// ---------------
+
+
+
+.back {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: @white;
+	.icn;
+	.iArrowLeft;
+	padding: 5px 10px 7px;
+	color: @gray;
+	
+	&:before {
+		margin-right: 5px;
+		top: 3px;
+		font-size: 16px;
+	}
+	
+	.transition(color .1s linear);
+	
+	&:active {
+		color: @blue;
+	}
+}
+
+.detail {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	overflow: auto;
+	background: @white;
+}
+
+
+.detailContent {
+	padding: @sectionPadding;
+}
+
+.detailPreview {
+	width: 100%;
+	background: @grayF8;
+}
+
+// FULLSCREEN NAVIGATION (mobile-only)
+
+#fullscreenNavigation {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: @grayF8;
+	z-index: 9999;
+	overflow: auto;
+	//display: none;
+}
+
+#fullscreenNavigationFooter
+{
+	background-color: @blue;
+	color: @white;
+	line-height: 18px;
+	//height: 170px;
+	
+	#fullscreenNavigationFooterLeft
+	{
+	  display: table-cell;
+	  padding: 20px 20px 20px 20px;
+
+	  a 
+	  {
+	  	text-decoration: underline;
+	  }
+	}	
+
+	#fullscreenNavigationFooterRight
+	{
+
+	}
+
+	.dividerNavFooter
+	{
+		height: 22px;
+	}
+}
+
+#fullscreenNavigationWrapper {
+	display: table;
+	table-layout: fixed;
+	height: 100%;
+	width: 100%;
+	
+	> div {
+		display: table-row;
+		.positioned;
+	}
+}
+
+#closeMenu {
+	position: absolute !important;
+	top: 20px;
+	right: 20px;
+	.square(25px);
+	.noTapHighlight;
+	
+	&:before, &:after {
+		content: "";
+		height: 3px;
+		width: 25px;
+		background: @grayC9;
+		position: absolute;
+		top: 10px;
+		left: 0;
+		.transition(background .1s linear);
+	}
+	
+	&:before {
+		.rotate(45deg);
+	}
+	
+	&:after {
+		.rotate(-45deg);
+	}
+	
+	
+	
+	&:active {
+		&:before, &:after {
+			background: @blue;
+		}
+	}
+}
+
+#fullscreenNavigationSections {
+	height: 100%;
+	color: lighten(@gray, 10%);
+}
+
+#fullscreenNavigationSectionsWrapper {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	height: 100%;
+	padding: 25px 50px;
+	
+	> div {
+		display: table-row;
+		font-size: (@mobileH2FontSize + @mobileH1FontSize) / 2;
+		> a {
+			font-size: inherit !important;
+			display: table-cell;
+			vertical-align: middle;
+			.noTapHighlight;
+			.transition(color .1s linear);
+			
+			&:active {
+				color: @blue;
+			}
+		}
+	}
+
+	ul
+	{
+		a
+		{
+			font-size: @menueFontSize;			
+		}
+
+		a:hover
+		{
+			color: @blue;
+		}
+
+		.active
+		{
+			color: @blue;
+		}
+
+		li
+		{
+			line-height: 3;
+		}
+
+		list-style-type: none;
+	}
+}
+
+#fullscreenNavigationContact {
+	height: 150px;
+}
+
+#fullscreenNavigationContactWrapper {
+	height: 100%;
+	background: @blue;
+}
+
+// Methods & Team Detail Overlay
+
+.methodsDetailHints, .teamDetailVita {
+	.positioned;
+	padding: 0 @sectionPadding @sectionPadding;
+	
+	header {
+		padding: @sectionPadding 0;
+		margin: 0;
+		border-top: 1px solid @grayLight;
+		
+		h4 {
+			color: @gray;
+		}
+	}
+}
+
+// METHODS DETAIL OVERLAY
+
+.methodsDetailPreview {
+	height: 40%;
+}
+
+.methodsDetailHints {
+	ul {
+		list-style-type: none;
+		.positioned;
+		li {
+			.positioned;
+			padding: 0 0 0 20px;
+			margin-bottom: 20px;
+			&:before {
+				content: "\2014";
+				display: inline-block;
+				position: absolute;
+				left: 0;
+				top: -1px;
+			}
+		}
+	}
+}
+
+
+
+// TEAM DETAIL OVERLAY
+
+.teamDetailPreview {
+	height: 60%;
+}
+
+.teamDetailVitaContent {
+	.positioned;
+	padding: @sectionPadding 0;
+	
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 4px;
+		bottom: 0;
+		width: 1px;
+		background: @grayLight;
+	}
+}
+
+.teamDetailVitaStep {
+	.positioned;
+	padding: 0 20px 0;
+	margin-bottom: 40px;
+		
+		
+	&:before {
+		content: "";
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 3px;
+		border: 3px solid @blue;
+		background: @white;
+		.square(4px);
+		.circle;
+	}
+	
+	h5 {
+	padding-bottom: 5px;
+	}
+}
+
+
+// PRAXIS DETAIL OVERLAY
+
+.praxisDetail {
+	display: table;
+	table-layout: fixed;
+	height: 100%;
+	  width: 100%;
+	
+	> div {
+		display: table-row;
+	}
+}
+
+.praxisDetailPreview {
+	height: 100%;
+	.positioned;
+	background: @grayF8;
+
+	.praxisDetailPreviewImage
+	{
+		  height: 100%;
+	}
+}
+
+
+.praxisDetailContentInnerWrapper {
+	display: table;
+	table-layout: fixed;
+	padding: 15px 0;
+	width: 100%;
+	
+	> div {
+		display: table-cell;
+	}
+
+	.praxisDetailPrev, .praxisDetailNext {
+		width: 50px;
+		.icn;
+		text-align: center;
+		vertical-align: middle;
+		line-height: 1;
+		
+		&:before {
+			font-size: 18px;	
+		}
+	}
+	
+	.praxisDetailPrev {
+		.iPrev;
+	}
+	
+	.praxisDetailNext {
+		.iNext;
+	}
+}
+
+.detailPreview
+{
+	.overlayMainImage
+	{
+		height: 100%;
+
+	}
+}
+
+.previewImage
+{
+	.previewSectionImage
+	{
+		  width: 100%;
+		  height: 100%;
+	}
+}

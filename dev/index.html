@@ -1,0 +1,544 @@
+<!--
+	TODO:
+		retina bilder laden per js?
+
+
+		- wordpress aufsetzen
+		- template
+		- content einfügen
+		- db sync
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title>Praxis Kley</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link href="https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/focuspoint.css">
+		<link rel="stylesheet" type="text/css" href="css/als.css" />
+
+	</head>
+	
+	<body>
+	
+		<section id="header" class="mobile-only">
+			<div id="headerLogo"></div>
+<!--			<div id="headerCurrentSection">Team</div>-->
+			<div id="toNav" class="normalMenu">
+				<p id="menueHeadline"></p>
+				<div class="stickyMenuFirstDiv">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+		</section>
+		
+		<section id="menue" class="tablet-only">
+			<div class="headerLogoMenue"></div>
+<!--			<div id="headerCurrentSection">Team</div>-->
+			<div id="toNavTablet">
+					<ul>
+						<li><a href="#start" data-name="Start">Start</a></li>
+						<li><a href="#methods" data-name="Methoden">Methoden</a></li>
+						<li><a href="#team" data-name="Team">Team</a></li>
+						<li><a href="#praxis" data-name="Praxis">Praxis</a></li>
+						<li><a href="#footer" data-name="Kontakt">Kontakt</a></li>
+					</ul>
+			</div>
+			<div id="headerAdresse">
+				<p>
+					Motzstraße 64<br />
+					10777 Berlin<br />
+					Telefon 030 236 358 90<br />
+					Telefax 030 236 358 91<br />
+					info@praxis-kley.de<br />
+				</p>
+					<br />
+					Öffnungszeiten<br />
+					<div class="divider"></div>
+				<p>
+					Mo, Di u. Do <br />
+					10.00 – 19.30 Uhr<br />
+				</p>
+					<div class="divider"></div>
+				<p>
+					Mi u. Fr. <br />
+					8.00 – 17.30 Uhr<br />
+					und nach Vereinbarung<br />
+				</p>
+					<div class="divider"></div>
+					<a href="#">Impressum</a><br />
+			</div>
+		</section>
+
+		<div id="wrapperNormal">
+			<section id="start">
+				<div id="my-als-list" class="als-container">
+					<nav class="pagination">
+						<div class="prev als-prev" id="paginationStart"></div>
+						<!--<div class="direct"></div>
+						<div class="direct active"></div>
+						<div class="direct"></div>-->
+						<div class="next als-next"></div>
+					</nav>
+					
+					<div class="als-viewport">
+						<div class="als-wrapper">
+
+							<div class="als-item" id="startItem01">
+								<header class="separateAfter">
+									<h1>0 Wie Faszien-Training gegen Schmerzen wirkt.</h1>
+									<h3>Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet.</h3>
+								</header>
+								<div class="sectionStartDiv">
+									
+							
+										<div class="focuspoint sectionStartImage resizeRect1_1Responsive" data-focus-x="-0.331" data-focus-y="-0.524">
+											<img src="images/faszientherapie.jpg" alt="">
+										</div>
+						
+
+									<div class="sectionStartText">
+										<p>
+											»Wie ein Hund!« sagte er, es war, als sollte die Scham ihn überleben. Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt. Und es war ihnen wie eine Bestätigung ihrer neuen Träume und guten Absichten, als am Ziele ihrer Fahrt die Tochter als erste sich erhob und ihren jungen Körper dehnte.
+										</p>
+										<a href="" class="internalLink">Zu unserer Behandlungsmethode <span class="noWrap">"Faszien-Therapie"</span></a>
+									</div>
+								</div>
+							</div>
+
+							<div class="als-item" id="startItem02">
+								<header class="separateAfter">
+									<h1>1 Wie Faszien-Training gegen Schmerzen wirkt.</h1>
+									<h3>Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet.</h3>
+								</header>
+								<div class="sectionStartDiv">
+									
+							
+										<div class="focuspoint sectionStartImage resizeRect1_1Responsive" data-focus-x="-0.331" data-focus-y="-0.524">
+											<img src="images/faszientherapie.jpg" alt="">
+											<!--<img src="images/faszientherapie.jpg" alt="" width="100%" height="200px" class="full startImg">-->
+										</div>
+						
+
+									<div class="sectionStartText">
+										<p>
+											»Wie ein Hund!« sagte er, es war, als sollte die Scham ihn überleben. Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt. Und es war ihnen wie eine Bestätigung ihrer neuen Träume und guten Absichten, als am Ziele ihrer Fahrt die Tochter als erste sich erhob und ihren jungen Körper dehnte.
+										</p>
+										<a href="" class="internalLink">Zu unserer Behandlungsmethode <span class="noWrap">"Faszien-Therapie"</span></a>
+									</div>
+								</div>
+							</div>
+
+							<div class="als-item" id="startItem03">
+								<header class="separateAfter">
+									<h1>2 Wie Faszien-Training gegen Schmerzen wirkt.</h1>
+									<h3>Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet.</h3>
+								</header>
+								<div class="sectionStartDiv">
+									
+							
+										<div class="focuspoint sectionStartImage resizeRect1_1Responsive" data-focus-x="-0.331" data-focus-y="-0.524">
+											<img src="images/faszientherapie.jpg" alt="">
+											<!--<img src="images/faszientherapie.jpg" alt="" width="100%" height="200px" class="full startImg">-->
+										</div>
+						
+
+									<div class="sectionStartText">
+										<p>
+											»Wie ein Hund!« sagte er, es war, als sollte die Scham ihn überleben. Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt. Und es war ihnen wie eine Bestätigung ihrer neuen Träume und guten Absichten, als am Ziele ihrer Fahrt die Tochter als erste sich erhob und ihren jungen Körper dehnte.
+										</p>
+										<a href="" class="internalLink">Zu unserer Behandlungsmethode <span class="noWrap">"Faszien-Therapie"</span></a>
+									</div>
+								</div>
+							</div>#
+						</div>
+					</div>
+				</div>
+			</section>
+			
+
+			<section id="methods">
+				<header>
+					<h1>Wir behandeln gerne gut.</h1>
+					<h3>Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte.</h3>
+				</header>
+				<article class="previewGallery" id="methodsGallery">
+				
+				<div class="overlay overlay-scale" id="MethodenOverlay">
+					<div class="detail methodsDetail">
+						<button type="button" class="overlay-close" data-theOverlayItem="MethodenOverlay"><div type="button" class="back">zurück</div></button>
+									<div class="detailPreview methodsDetailPreview">
+
+										<div class="focuspoint sectionStartImage overlayMainImage" data-focus-x="-0.331" data-focus-y="-0.524">
+											<img src="images/faszientherapie.jpg" alt="">
+										</div>
+
+									</div>
+									<div class="detailContent methodsDetailContent">
+										<header class="separateAfter">
+											<h1>Faszien-Therapie</h1>
+											<h3>Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet.</h3>
+										</header>
+										<p>Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet. »Wie ein Hund!« sagte er, es war, als sollte die Scham ihn überleben. Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt. Und es war ihnen wie eine Bestätigung ihrer neuen Träume und guten Absichten, als am Ziele ihrer Fahrt die Tochter als erste sich erhob und ihren jungen Körper dehnte. »Es ist ein eigentümlicher Apparat«, sagte der Offizier zu dem Forschungsreisenden und überblickte mit einem gewissermaßen bewundernden Blick den ihm doch wohlbekannten Apparat.
+										</p>
+									</div>
+									<div class="methodsDetailHints">
+										<header>
+											<h4>Wann eine Faszientherapie sinnvoll sein kann:</h4>
+										</header>
+										<ul>
+											<li>Sie spüren ein Ziehen im Rücken</li>
+											<li>Sie erleben erste Anzeichen von Fußbeschwerden</li>
+											<li>Sie können sich nicht mehr schnell bewegen</li>
+											<li>Sie bemerken eine Verschlechterung Ihrer allgemeinen gesundheitlichen Situation</li>
+										</ul>
+									</div>
+						</div>
+				</div>
+
+
+						<a class="preview small overlayButtonOpen" data-theOverlayItem="MethodenOverlay">
+							<div class="previewImage resizeRect1_1">
+								<div class="focuspoint sectionNormalImage resizeRect1_1" data-focus-x="-0.331" data-focus-y="-0.524">
+									<img src="images/faszientherapie.jpg" alt="">
+								</div>
+							</div>
+							<h4>Manuelle Therapie</h4>
+						</a>
+
+						<a class="preview small">
+							<div class="previewImage resizeRect1_1">
+									<div class="focuspoint sectionNormalImage resizeRect1_1" data-focus-x="-0.331" data-focus-y="-0.524">
+										<img src="images/faszientherapie.jpg" alt="">
+									</div>
+							</div>
+							<h4>Manuelle Therapie</h4>
+						</a>
+
+						<a class="preview full">							
+							<div class="previewImage resizeRectWide">
+									<div class="focuspoint sectionNormalImage resizeRectWide" data-focus-x="-0.331" data-focus-y="-0.524">
+										<img src="images/faszientherapie.jpg" alt="">
+									</div>
+							</div>
+							<h4>Manuelle Therapie</h4>
+						</a>
+
+						<a class="preview small">
+							<div class="previewImage resizeRect1_1">
+								<div class="focuspoint sectionNormalImage resizeRect1_1" data-focus-x="-0.331" data-focus-y="-0.524">
+									<img src="images/faszientherapie.jpg" alt="">
+								</div>
+							</div>
+							<h4>Manuelle Therapie</h4>
+						</a>
+
+						<a class="preview small">
+							<div class="previewImage resizeRect1_1">
+									<div class="focuspoint sectionNormalImage resizeRect1_1" data-focus-x="-0.331" data-focus-y="-0.524">
+										<img src="images/faszientherapie.jpg" alt="">
+									</div>
+							</div>
+							<h4>Manuelle Therapie</h4>
+						</a>
+
+					</article>
+			</section>
+			
+
+
+			<section id="team">
+				
+				<!--Overlay Begin-->
+				<div class="overlay overlay-scale" id="larissaOverlay">
+					<div class="detail" id="teamDetail">
+					<button type="button" class="overlay-close" data-theOverlayItem="larissaOverlay"><div type="button" class="back">zurück</div></button>
+						
+						<div class="detailPreview teamDetailPreview">
+
+										<div class="focuspoint sectionStartImage overlayMainImage" data-focus-x="-0.331" data-focus-y="-0.524">
+											<img src="images/faszientherapie.jpg" alt="">
+										</div>
+
+						</div>
+						<div class="detailContent" id="teamDetailContent">
+							<header class="separateAfter">
+								<h1>Larissa Kley</h1>
+							</header>
+							<p>Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses getan hätte, wurde er eines Morgens verhaftet. »Wie ein Hund!« sagte er, es war, als sollte die Scham ihn überleben. Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren Ungeziefer verwandelt. Und es war ihnen wie eine Bestätigung ihrer neuen Träume und guten Absichten, als am Ziele ihrer Fahrt die Tochter als erste sich erhob und ihren jungen Körper dehnte. »Es ist ein eigentümlicher Apparat«, sagte der Offizier zu dem Forschungsreisenden und überblickte mit einem gewissermaßen bewundernden Blick den ihm doch wohlbekannten Apparat.
+							</p>
+						</div>
+						<div class="teamDetailVita">
+							<header>
+								<h4>Larissas Vita</h4>
+							</header>
+							<div class="teamDetailVitaContent">
+								<div class="teamDetailVitaStep">
+									<h5>1990-1992</h5>
+									<p>Ausbildung zur Physiotherapeutin mit Staatsexamen an der privaten Schule für Krankengymnastik in Neustadt an der Weinstraße.</p>
+								</div>
+								<div class="teamDetailVitaStep">
+									<h5>1992-1993</h5>
+									<p>Anerkennungsjahr in den Reha-Kliniken Bad Krotzingen.</p>
+								</div>
+								<div class="teamDetailVitaStep">
+									<h5>1993-2000</h5>
+									<p>Tätigkeit im Gesundheitsteam Physiotherapie R. Bruzek in Badenweiler.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--Overlay End-->
+
+
+				<header>
+					<h1>Wir sind auch nett.</h1>
+					<h3>Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses.</h3>
+				</header>
+				<article>
+					<div class="teamMemberPreview">
+						<div class="teamMemberPreviewImage"></div>
+						<div class="teamMemberPreviewText">
+							<header class="separateAfter">
+								<h2>Larissa Kley</h2>
+							</header>
+							<p>
+								»Wie ein Hund!« sagte er, es war, als sollte die Scham ihn überleben. Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheueren...
+							</p>
+							<a class="internalLink overlayButtonOpen" id="trigger-overlay" data-theOverlayItem="larissaOverlay" >Mehr über Larissa</a>
+						
+						</div>
+					</div>
+				</article>
+			</section>
+			
+			<section id="praxis">
+
+				<!--Overlay Begin-->	
+				<div class="overlay overlay-scale gallerieElement" id="galerieOverlay-1">
+					<div class="detail praxisDetail">
+						<button type="button" class="overlay-close" data-theOverlayItem="galerieOverlay-1"><div type="button" class="back">zurück</div></button>
+						<div class="detailPreview praxisDetailPreview">
+										<div class="focuspoint sectionStartImage overlayMainImage" data-focus-x="-0.331" data-focus-y="-0.524">
+											<img src="images/faszientherapie.jpg" alt="">
+										</div>
+						</div>
+						<div class="praxisDetailContentOuterWrapper">
+							<div class="praxisDetailContentInnerWrapper">
+								<div class="praxisDetailPrev"></div>
+								<div class="praxisDetailContent">
+									<h2>01</h2>
+									<p>Zwei Dinge, die sich nie ausschließen sollten. Beclasses wird bei uns hochgehalten, darauf können Sie sich verlassen.</p>
+								</div>
+								<div class="praxisDetailNext"></div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<!--Overlay End-->
+
+				<!--Overlay Begin-->	
+				<div class="overlay overlay-scale gallerieElement" id="galerieOverlay-2">
+					<div class="detail praxisDetail">
+						<button type="button" class="overlay-close" data-theOverlayItem="galerieOverlay-2"><div type="button" class="back">zurück</div></button>
+						<div class="detailPreview praxisDetailPreview">
+							<div class="praxisDetailPreviewImage"></div>
+						</div>
+						<div class="praxisDetailContentOuterWrapper">
+							<div class="praxisDetailContentInnerWrapper">
+								<div class="praxisDetailPrev"></div>
+								<div class="praxisDetailContent">
+									<h2>02</h2>
+									<p>Zwei Dinge, die sich nie ausschließen sollten. Beclasses wird bei uns hochgehalten, darauf können Sie sich verlassen.</p>
+								</div>
+								<div class="praxisDetailNext"></div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<!--Overlay End-->
+
+				<!--Overlay Begin-->	
+				<div class="overlay overlay-scale gallerieElement" id="galerieOverlay-3">
+					<div class="detail praxisDetail">
+						<button type="button" class="overlay-close" data-theOverlayItem="galerieOverlay-3"><div type="button" class="back">zurück</div></button>
+						<div class="detailPreview praxisDetailPreview">
+							<div class="praxisDetailPreviewImage"></div>
+						</div>
+						<div class="praxisDetailContentOuterWrapper">
+							<div class="praxisDetailContentInnerWrapper">
+								<div class="praxisDetailPrev"></div>
+								<div class="praxisDetailContent">
+									<h2>03</h2>
+									<p>Zwei Dinge, die sich nie ausschließen sollten. Beclasses wird bei uns hochgehalten, darauf können Sie sich verlassen.</p>
+								</div>
+								<div class="praxisDetailNext"></div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<!--Overlay End-->
+
+				<!--Overlay Begin-->	
+				<div class="overlay overlay-scale gallerieElement" id="galerieOverlay-4">
+					<div class="detail praxisDetail">
+						<button type="button" class="overlay-close" data-theOverlayItem="galerieOverlay-4"><div type="button" class="back">zurück</div></button>
+						<div class="detailPreview praxisDetailPreview">
+							<div class="praxisDetailPreviewImage"></div>
+						</div>
+						<div class="praxisDetailContentOuterWrapper">
+							<div class="praxisDetailContentInnerWrapper">
+								<div class="praxisDetailPrev"></div>
+								<div class="praxisDetailContent">
+									<h2>04</h2>
+									<p>Zwei Dinge, die sich nie ausschließen sollten. Beclasses wird bei uns hochgehalten, darauf können Sie sich verlassen.</p>
+								</div>
+								<div class="praxisDetailNext"></div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<!--Overlay End-->
+
+				<header>
+					<h1>Unsere Praxis lässt sich sehen</h1>
+					<h3>Jemand musste Josef K. verleumdet haben, denn ohne dass er etwas Böses.</h3>
+				</header>
+					<article class="previewGallery" id="allGallerySelectors">
+						<a class="preview small overlayButtonOpen" data-theOverlayItem="galerieOverlay-1" id="galerieOverlay-1Base">
+							<div class="previewImage resizeRect1_1">
+								<div class="focuspoint sectionNormalImage resizeRect1_1" data-focus-x="-0.331" data-focus-y="-0.524">
+									<img src="images/faszientherapie.jpg" alt="">
+								</div>
+							</div>
+						</a>
+
+						<a class="preview small overlayButtonOpen" data-theOverlayItem="galerieOverlay-2" id="galerieOverlay-2Base">
+							<div class="previewImage resizeRect1_1">
+									<div class="focuspoint sectionNormalImage resizeRect1_1" data-focus-x="-0.331" data-focus-y="-0.524">
+										<img src="images/faszientherapie.jpg" alt="">
+									</div>
+							</div>
+						</a>
+
+						<a class="preview full overlayButtonOpen" data-theOverlayItem="galerieOverlay-3" id="galerieOverlay-3Base">							
+							<div class="previewImage resizeRectWide">
+									<div class="focuspoint sectionNormalImage resizeRectWide" data-focus-x="-0.331" data-focus-y="-0.524">
+										<img src="images/faszientherapie.jpg" alt="">
+									</div>
+							</div>
+						</a>
+
+						<a class="preview small overlayButtonOpen" data-theOverlayItem="galerieOverlay-4" id="galerieOverlay-4Base">
+							<div class="previewImage resizeRect1_1">
+								<div class="focuspoint sectionNormalImage resizeRect1_1" data-focus-x="-0.331" data-focus-y="-0.524">
+									<img src="images/faszientherapie.jpg" alt="">
+								</div>
+							</div>
+						</a>
+
+						<!--<a class="preview small">
+							<div class="previewImage resizeRect1_1">
+									<div class="focuspoint sectionNormalImage resizeRect1_1" data-focus-x="-0.331" data-focus-y="-0.524">
+										<img src="images/faszientherapie.jpg" alt="">
+									</div>
+							</div>
+						</a>-->
+						
+					</article>
+			</section>
+		</div>
+
+		<footer id="footer">
+			<header class="separateAfter">
+				<h1>Wir freuen uns auf Ihren Besuch.</h1>
+			</header>
+			<div class="footerContent">
+				<div class="telContact">
+					<h3>Zögern Sie nicht, einfach anzurufen.</h3><br/>
+					<h1>030 / 236 358 90</h1>
+				</div>
+				<div class="openingHours">
+					<h2>Unsere Öffnungszeiten</h2>
+					<div class="openingHoursContainer">
+						<div class="openingHoursBlock">
+							<p>Montag, Dienstag, Donnerstag</p>
+							<h2>10.00 – 19:30</h2>
+						</div>
+						<div class="openingHoursBlock">
+							<p>Mittwoch und Freitag</p>
+							<h2>8.00 – 17:30</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<section id="map"></section>
+		
+		<nav id="fullscreenNavigation" class="mobile-only" style="display: none">
+			<div id="fullscreenNavigationWrapper">
+				<div id="closeMenu"></div>
+				<div id="fullscreenNavigationSections">
+					<div id="fullscreenNavigationSectionsWrapper">
+						<div><a href="#start" data-name="Start">Start</a></div>
+						<div><a href="#methods" data-name="Methoden">Methoden</a></div>
+						<div><a href="#team" data-name="Team">Team</a></div>
+						<div><a href="#praxis" data-name="Praxis">Praxis</a></div>
+						<div><a href="#footer" data-name="Kontakt">Kontakt</a></div>
+					</div>
+				</div>
+					<div id="fullscreenNavigationFooter">
+						<div id="fullscreenNavigationFooterLeft">
+							Motzstraße 64<br />
+							10777 Berlin<br />
+							Tel. 030 236 358 90<br />
+							Fax. 030 236 358 91<br />
+							info@praxis-kley.de<br />
+							<div class="dividerNavFooter"></div>
+							<a href="#">Impressum</a><br />
+						</div>
+						<div id="fullscreenNavigationFooterRight">
+							Öffnungszeiten<br />
+							<div class="divider"></div>
+							<p>
+							Mo, Di u. Do <br />
+							10.00 – 19.30 Uhr<br />
+							</p>
+							<div class="divider"></div>
+							<p>
+							Mi u. Fr. <br />
+							8.00 – 17.30 Uhr<br />
+							und nach Vereinbarung<br />
+						</div>
+					</div>
+			</div>
+		</nav>
+		
+	<script src="https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js"></script>
+	<script src="js/map.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="js/focuspoint.js"></script>
+	<script src="js/jquery.alsEN-1.2.js" ></script>
+	<script src="js/main.js"></script>
+	<script src="js/overlay.js"></script>
+
+
+	</body>
+	
+</html>

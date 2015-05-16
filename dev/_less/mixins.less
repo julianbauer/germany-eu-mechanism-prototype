@@ -1,0 +1,380 @@
+// UTILITY MIXINS
+// --------------------------------------------------
+
+// Clearfix
+// --------
+// For clearing floats like a boss h5bp.com/q
+.clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+    // Fixes Opera/contenteditable bug:
+    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Center-align a block level element
+// ----------------------------------
+.center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// IE7 likes to collapse whitespace on either side of the inline-block elements.
+// Ems because we're attempting to match the width of a space character. Left
+// version is for form buttons, which typically come after other elements, and
+// right version is for icons, which come before. Applying both is ok, but it will
+// mean that space between those elements will be .6em (~2 space characters) in IE7,
+// instead of the 1 space in other browsers.
+.ie7-restore-left-whitespace() {
+  *margin-left: .3em;
+
+  &:first-child {
+    *margin-left: 0;
+  }
+}
+
+.ie7-restore-right-whitespace() {
+  *margin-right: .3em;
+}
+
+// Sizing shortcuts
+// -------------------------
+.size(@height, @width) {
+  width: @width;
+  height: @height;
+}
+.square(@size) {
+  .size(@size, @size);
+}
+
+
+// Text overflow
+// -------------------------
+// Requires inline-block or block for proper styling
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// FORMS
+// --------------------------------------------------
+
+// Block level inputs
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 30px;        // Make inputs at least the height of their button counterpart
+  .border-box; // Makes inputs behave like true block-level elements
+}
+
+// Mixin for form field states
+.formFieldState(@textColor: #555, @borderColor: #ccc, @backgroundColor: #f5f5f5) {
+  // Set the text color
+  > label,
+  .help-block,
+  .help-inline {
+    color: @textColor;
+  }
+  // Style inputs accordingly
+  .checkbox,
+  .radio,
+  input,
+  select,
+  textarea {
+    color: @textColor;
+  }
+  input,
+  select,
+  textarea {
+    border-color: @borderColor;
+    .box-shadow(inset 0 1px 1px rgba(0,0,0,.075)); // Redeclare so transitions work
+    &:focus {
+      border-color: darken(@borderColor, 10%);
+      .box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px lighten(@borderColor, 20%));
+    }
+  }
+  // Give a small background color for input-prepend/-append
+  .input-prepend .add-on,
+  .input-append .add-on {
+    color: @textColor;
+    background-color: @backgroundColor;
+    border-color: @textColor;
+  }
+}
+
+// CSS3 PROPERTIES
+// --------------------------------------------------
+
+// Border Radius
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+// Drop shadows
+.box-shadow(@shadowA, @shadowB:X, ...){
+  // Multiple shadow solution from http://toekneestuck.com/blog/2012/05/15/less-css-arguments-variable/
+  @props: ~`"@{arguments}".replace(/[\[\]]|\,\sX/g, '')`;
+  -webkit-box-shadow: @props;
+     -moz-box-shadow: @props;
+          box-shadow: @props;
+}
+
+// Transitions
+.transition(@transition) {
+  -webkit-transition: @transition;
+     -moz-transition: @transition;
+       -o-transition: @transition;
+          transition: @transition;
+}
+
+// Animation
+
+.animation(@animation) {
+	-webkit-animation: @animation;
+  -moz-animation:    @animation;
+  -o-animation:      @animation;
+  animation:         @animation;
+}
+
+.animation-delay(@delay) {
+	-webkit-animation-delay: @delay;
+	-moz-animation-delay: @delay;
+	-o-animation-delay: @delay;
+  animation-delay: @delay;
+}
+
+.animation-timing-function(@timing-function) {
+	-webkit-animation-timing-function: @timing-function;
+  -moz-timing-function: @timing-function;
+	-o-timing-function: @timing-function;
+	animation-timing-function: @timing-function;
+}
+
+// Transformations
+.rotate(@degrees) {
+  -webkit-transform: rotate(@degrees);
+     -moz-transform: rotate(@degrees);
+      -ms-transform: rotate(@degrees);
+       -o-transform: rotate(@degrees);
+          transform: rotate(@degrees);
+}
+.scale(@ratio) {
+  -webkit-transform: scale(@ratio);
+     -moz-transform: scale(@ratio);
+      -ms-transform: scale(@ratio);
+       -o-transform: scale(@ratio);
+          transform: scale(@ratio);
+}
+
+.translate3d(@x, @y, @z) {
+  -webkit-transform: translate3d(@x, @y, @z);
+     -moz-transform: translate3d(@x, @y, @z);
+       -o-transform: translate3d(@x, @y, @z);
+          transform: translate3d(@x, @y, @z);
+}
+
+.transform-origin(@x, @y, @z) {
+  -webkit-transform-origin: @x, @y, @z;
+     -moz-transform-origin: @x, @y, @z;
+       -o-transform-origin: @x, @y, @z;
+          transform-origin: @x, @y, @z;
+}
+
+// Backface visibility
+// Prevent browsers from flickering when using CSS 3D transforms.
+// Default value is `visible`, but can be changed to `hidden
+// See git pull https://github.com/dannykeane/bootstrap.git backface-visibility for examples
+.backface-visibility(@visibility){
+	-webkit-backface-visibility: @visibility;
+	   -moz-backface-visibility: @visibility;
+	        backface-visibility: @visibility;
+}
+
+// Background clipping
+// Heads up: FF 3.6 and under need "padding" instead of "padding-box"
+.background-clip(@clip) {
+  -webkit-background-clip: @clip;
+     -moz-background-clip: @clip;
+          background-clip: @clip;
+}
+
+// Background sizing
+.background-size(@size){
+  -webkit-background-size: @size;
+     -moz-background-size: @size;
+       -o-background-size: @size;
+          background-size: @size;
+}
+
+
+// Box sizing
+.box-sizing(@boxmodel) {
+  -webkit-box-sizing: @boxmodel;
+     -moz-box-sizing: @boxmodel;
+          box-sizing: @boxmodel;
+}
+
+// User select (for text)
+
+.user-select(@select) {
+  -webkit-user-select: @select;
+     -moz-user-select: @select;
+      -ms-user-select: @select;
+       -o-user-select: @select;
+          user-select: @select;
+}
+
+// Reset filters for IE
+.reset-filter() {
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
+}
+
+.blur(@value) {
+  -webkit-filter: blur(@value);
+     -moz-filter: blur(@value);
+       -o-filter: blur(@value);
+      -ms-filter: blur(@value);
+}
+
+
+// Resize anything
+.resizable(@direction) {
+  resize: @direction; // Options: horizontal, vertical, both
+  overflow: auto; // Safari fix
+}
+
+// Opacity
+.opacity(@opacity) {
+  opacity: @opacity / 100;
+  filter: ~"alpha(opacity=@{opacity})";
+}
+
+
+// Translation
+
+.translate(@x,@y,@z) {
+  -webkit-transform: translate3d(@x,@y,@z);
+     -moz-transform: translate3d(@x,@y,@z);
+       -o-transform: translate3d(@x,@y,@z);
+          transform: translate3d(@x,@y,@z);
+}
+
+.transformTransition(@duration, @easing) {
+	-webkit-transition: -webkit-transform @duration @easing;
+	   -moz-transition: -moz-transform @duration @easing;
+	     -o-transition: -o-transform @duration @easing;
+	        transition: transform @duration @easing;
+}
+
+.border-box{
+  .box-sizing(border-box);
+}
+
+.circle {
+  .border-radius(500px);
+}
+
+
+.positioned {
+  position: relative;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.noWrap {
+  white-space: nowrap;
+}
+
+// Disable webkite user-select
+
+.noSelect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+// Table-row scaffolding mixin for filling space dynamically
+
+.sc-tr {
+  display: table !important;
+  table-layout: fixed;
+  height: 100%;
+  .positioned;
+  
+  > div {
+    display: table-row !important;
+    .positioned;
+    
+    &.fillSpace {
+      height: 100% !important;
+    }
+  }
+}
+
+// basic table-cell layout
+
+.sc-tc {
+  display: table;
+  
+  > div {
+    display: table-cell;
+  }
+}
+
+// 100% width table-cell layout
+
+.sc-tc100 {
+  display: table;
+  width: 100%;
+	table-layout: fixed;
+  
+  > div {
+    display: table-cell;
+  }
+}
+
+
+// Fix table-row constraints with a container
+
+.fix-tr {
+  position: relative;
+  display: block;
+  height: 100%;
+}
+
+// Fix table-cell constraints with a container
+
+.fix-tc {
+  position: relative;
+  display: block;
+}
+
+//Prevend Scrolling when overlay element is active
+.noScroll
+{
+  //position: fixed;
+  overflow: hidden;
+  //visibility: hidden;
+}
+
+.noTapHighlight {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
