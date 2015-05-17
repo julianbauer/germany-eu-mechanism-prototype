@@ -127,12 +127,13 @@ export default class App extends React.Component {
         );
       }
       case 2: {
-        const maxVote = _.max(this.state.messages.map(m => m.vote));
+        const messages = this.state.messages.sort((a, b) => b.vote - a.vote);
+        const maxVote = _.max(messages.map(m => m.vote));
         const maxColor = '#74b917';
         const minColor = '#ff5500';
         return (
           <section id="ranking">
-            {this.state.messages.map(m => (
+            {messages.map(m => (
               <div style={{color: interpolateColor(minColor, maxColor, maxVote, m.vote)}} className="rankedPost" key={Math.random()}>
                 <p className="baseTextarea">{m.text}</p>
                 <div className="voting"><div>{m.vote}</div></div>
