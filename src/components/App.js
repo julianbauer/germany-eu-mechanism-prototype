@@ -3,6 +3,33 @@
 import React from 'react';
 import _ from 'lodash';
 
+const d2h = d => d.toString(16);
+const h2d = h => parseInt(h,16);
+
+function interpolateColor(minColor, maxColor, maxDepth, depth) {
+  if (depth == 0){
+    return minColor;
+  }
+  if (depth == maxDepth){
+    return maxColor;
+  }
+
+  var color = "#";
+
+  for (var i = 1; i <= 6; i += 2){
+    var minVal = new Number(h2d(minColor.substr(i, 2)));
+    var maxVal = new Number(h2d(maxColor.substr(i, 2)));
+    var nVal = minVal + (maxVal - minVal) * (depth / maxDepth);
+    var val = d2h(Math.floor(nVal));
+    while (val.length < 2){
+      val = "0" + val;
+    }
+    color += val;
+  }
+
+  return color;
+}
+
 export default class App extends React.Component {
 
   constructor(props) {
@@ -100,10 +127,13 @@ export default class App extends React.Component {
         );
       }
       case 2: {
+        const maxVote = _.max(this.state.messages.map(m => m.vote));
+        const maxColor = '#74b917';
+        const minColor = '#ff5500';
         return (
           <section id="ranking">
             {this.state.messages.map(m => (
-              <div className="rankedPost" key={Math.random()}>
+              <div style={{color: interpolateColor(minColor, maxColor, maxVote, m.vote)}} className="rankedPost" key={Math.random()}>
                 <p className="baseTextarea">{m.text}</p>
                 <div className="voting"><div>{m.vote}</div></div>
               </div>
