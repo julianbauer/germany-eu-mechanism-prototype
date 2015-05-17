@@ -9,7 +9,7 @@ export default class App extends React.Component {
         <header>
           <h3>Was denkst du über Deutschland?</h3>
         </header>
-        <textarea className="baseTextarea" autofocus></textarea>
+        <textarea className="baseTextarea" autoFocus></textarea>
       </section>
     );
   }
