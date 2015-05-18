@@ -95,9 +95,19 @@ export default class App extends React.Component {
     }
   }
 
+  _increaseStep() {
+    const step = this.state.step + 1;
+    this.setState({ step });
+  }
+
   render() {
     switch(this.state.step) {
       case 0: {
+        return (
+          <section onClick={this._increaseStep.bind(this)} id="black"></section>
+        );
+      }
+      case 1: {
         return (
           <section id="typePost">
             <header>
@@ -111,7 +121,7 @@ export default class App extends React.Component {
           </section>
         );
       }
-      case 1: {
+      case 2: {
         const message = _.find(this.state.messages, 'unvoted');
         return (
           <section id="votePost">
@@ -126,13 +136,13 @@ export default class App extends React.Component {
           </section>
         );
       }
-      case 2: {
+      case 3: {
         const messages = this.state.messages.sort((a, b) => b.vote - a.vote);
         const maxVote = _.max(messages.map(m => m.vote));
         const maxColor = '#74b917';
         const minColor = '#ff5500';
         return (
-          <section id="ranking">
+          <section onClick={this._increaseStep.bind(this)} id="ranking">
             {messages.map(m => (
               <div style={{color: interpolateColor(minColor, maxColor, maxVote, m.vote)}} className="rankedPost" key={Math.random()}>
                 <p className="baseTextarea">{m.text}</p>
@@ -140,6 +150,11 @@ export default class App extends React.Component {
               </div>
             ))}
           </section>
+        );
+      }
+      case 4: {
+        return (
+          <section id="black"></section>
         );
       }
     }
